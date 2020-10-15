@@ -15,7 +15,7 @@ Exercise projects on basic deep learning algorithms
   - Initializing parameters
   - Calculating the cost function and its gradient
   - Using an optimization algorithm (gradient descent)
-- Gather all three functions above into a main model function, in the right order.
+- Gather all three functions above into a main model function, in the right order
 
 ## ex3_Planar Data Classification with One Hidden Layer
 
@@ -29,3 +29,7 @@ Exercise projects on basic deep learning algorithms
 - Use non-linear units like ReLU to improve your model
 - Build a deeper neural network (with more than 1 hidden layer)
 - Implement an easy-to-use neural network class
+
+## ex5_Deep Neural Network for Image Classification: Application
+
+- Build and apply a deep neural network to supervised learning
