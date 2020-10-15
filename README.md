@@ -23,3 +23,9 @@ Exercise projects on basic deep learning algorithms
 - Use units with a non-linear activation function, such as tanh
 - Compute the cross entropy loss
 - Implement forward and backward propagation
+
+## ex4_Building your Deep Neural Network: Step by Step
+
+- Use non-linear units like ReLU to improve your model
+- Build a deeper neural network (with more than 1 hidden layer)
+- Implement an easy-to-use neural network class
