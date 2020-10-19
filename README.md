@@ -33,3 +33,16 @@ Exercise projects on basic deep learning algorithms
 ## ex5_Deep Neural Network for Image Classification: Application
 
 - Build and apply a deep neural network to supervised learning
+
+## ex6_Initialization
+
+- Speed up the convergence of gradient descent
+- Increase the odds of gradient descent converging to a lower training (and generalization) error
+
+## ex7_Regularization
+
+- Use regularization in your deep learning models
+
+## ex8_Gradient Checking
+
+- Implement and use gradient checking
