@@ -50,3 +50,10 @@ Exercise projects on basic deep learning algorithms
 ## ex9_Optimization Methods
 
 - Speed up learning and get a better final value for the cost function using more advanced optimization methods
+
+## ex10_TensorFlow Tutorial
+
+- Initialize variables
+- Start your own session
+- Train algorithms
+- Implement a Neural Network
