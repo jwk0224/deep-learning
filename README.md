@@ -46,3 +46,7 @@ Exercise projects on basic deep learning algorithms
 ## ex8_Gradient Checking
 
 - Implement and use gradient checking
+
+## ex9_Optimization Methods
+
+- Speed up learning and get a better final value for the cost function using more advanced optimization methods
