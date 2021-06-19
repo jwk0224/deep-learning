@@ -1,6 +1,6 @@
 # deep-learning
 
-Exercise projects on basic deep learning algorithms from Coursera Deep Learning Specialization course by Andrew Ng
+Exercise projects on basic deep learning algorithms from Deep Learning Specialization course by Andrew Ng in Coursera
 
 ## ex1_Python Basics with Numpy
 
