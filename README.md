@@ -57,3 +57,10 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Start your own session
 - Train algorithms
 - Implement a Neural Network
+
+## ex11_Convolutional Neural Networks: Step by Step
+
+- Explain the convolution operation
+- Apply two different types of pooling operation
+- Identify the components used in a convolutional neural network (padding, stride, filter, ...) and their purpose
+- Build a convolutional neural network
