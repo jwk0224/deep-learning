@@ -64,3 +64,9 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Apply two different types of pooling operation
 - Identify the components used in a convolutional neural network (padding, stride, filter, ...) and their purpose
 - Build a convolutional neural network
+
+## ex12_Convolutional Neural Networks: Application
+
+- Build and train a ConvNet in TensorFlow for a binary classification problem
+- Build and train a ConvNet in TensorFlow for a multiclass classification problem
+- Explain different use cases for the Sequential and Functional APIs
