@@ -83,3 +83,10 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Preprocess and augment data using the Sequential API
 - Adapt a pretrained model to new data and train a classifier using the Functional API and MobileNet
 - Fine-tune a classifier's final layers to improve accuracy
+
+## cnn_ex5_Car Detection with YOLO
+
+- Detect objects in a car detection dataset
+- Implement non-max suppression to achieve better accuracy
+- Implement intersection over union as a function of NMS
+- Create usable bounding box tensors from the model's predictions
