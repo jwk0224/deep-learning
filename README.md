@@ -90,3 +90,10 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Implement non-max suppression to achieve better accuracy
 - Implement intersection over union as a function of NMS
 - Create usable bounding box tensors from the model's predictions
+
+## cnn_ex6_Image Segmentation with U-Net
+
+- Build your own U-Net
+- Explain the difference between a regular CNN and a U-net
+- Implement semantic image segmentation on the CARLA self-driving car dataset
+- Apply sparse categorical crossentropy for pixelwise prediction
