@@ -106,3 +106,10 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Explain how to pose face recognition as a binary classification problem
 - Map face images into 128-dimensional encodings using a pretrained model
 - Perform face verification and face recognition with these encodings
+
+## cnn_ex8_Art Generation with Neural Style Transfer
+
+- Implement the neural style transfer algorithm
+- Generate novel artistic images using your algorithm
+- Define the style cost function for Neural Style Transfer
+- Define the content cost function for Neural Style Transfer
