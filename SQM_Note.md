@@ -1,4 +1,4 @@
-# Recurrent Neural Networks
+# 1. Recurrent Neural Networks
 
 ## Examples of Sequence Data
 
@@ -201,8 +201,8 @@ Stacking multiple layers of RNNs together is sometimes useful to learn very comp
 As deep RNNs are quite computationally expensive to train,  
 deep RNN layers are often followed by deep conventional neural networks
 
-# Natural Language Processing & Word Embeddings
+# 2. Natural Language Processing & Word Embeddings
 
-# Sequence Models & Attention Mechanism
+# 3. Sequence Models & Attention Mechanism
 
-# Transformer Network
+# 4. Transformer Network

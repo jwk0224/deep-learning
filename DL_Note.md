@@ -1,4 +1,4 @@
-# Neural Networks and Deep Learning
+# 1. Neural Networks and Deep Learning
 
 ## Deep Learning
 
@@ -59,7 +59,7 @@ Each unit in the same layer affects same to the output node (no point of many no
 So randomly initialize w (b is okay with 0)  
 For Sigmoid or Tanh, multiply small number (ex. 0.01) to make sure the value is not too large
 
-# Practical Aspects of Deep Learning
+# 2. Practical Aspects of Deep Learning
 
 ## Train / Dev / Test Set
 
@@ -184,7 +184,7 @@ Tips
 - Turn off drop out when grad check
 - If grad check false alarms due to random initialization, run some training and do it again
 
-# Optimization Algorithms
+# 3. Optimization Algorithms
 
 ## Mini-batch Gradient Descent
 
@@ -303,7 +303,7 @@ Most points of zero gradient in a cost function are saddle points (not local opt
 
 Plateaus can make learning slower and algorithms such as Adam can help speed up
 
-# Hyperparameter Tuning, Batch Normalization and Programming Frameworks
+# 4. Hyperparameter Tuning, Batch Normalization and Programming Frameworks
 
 ## Tuning Process
 
@@ -391,7 +391,7 @@ As of 2019, Google launched TensorFlow 2
 TensorFlow 2 borrowed its syntax from Keras  
 Keras is a high level library that can operate on top of TensorFlow 1 and other deep learning libraries
 
-# Structuring Machine Learning Projects
+# 5. Structuring Machine Learning Projects
 
 ## Orthogonalization
 
