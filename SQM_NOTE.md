@@ -93,12 +93,12 @@ To build a language model,
    - get probability of sentence by multiplying probability of each word
 
 Sampling a sequence from a trained RNN
-- use the probabilities output of softmax layer of RNN to randomly sample a word for that time step
-- pass the selected word to the next time step
-- repeat above process until it reaches the last time step
-  - when EOS token is sampled
-  - when reaches manually picked number of time step
-- ignore UNK token and resample when getting unknown word is not preferred
+1) use the probabilities output of softmax layer of RNN to randomly sample a word for that time step
+2) pass the selected word to the next time step
+3) repeat above process until it reaches the last time step
+   - when EOS token is sampled
+   - when reaches manually picked number of time step
+- ignore UNK token and re-sample when having unknown word is not preferred
 
 Character level language model (vs Word level)
 - no worry for unknown word tokens
