@@ -93,7 +93,7 @@ To build a language model,
    - get probability of sentence by multiplying probability of each word
 
 Sampling a sequence from a trained RNN
-- use the probabilities output by the RNN to randomly sample a word for that time step
+- use the probabilities output of softmax layer of RNN to randomly sample a word for that time step
 - pass the selected word to the next time step
 - repeat above process until it reaches the last time step
   - when EOS token is sampled
