@@ -1,4 +1,4 @@
-# Convolutional Neural Networks
+# Foundations of Convolutional Neural Networks
 
 ## Computer Vision Problems
 
@@ -71,6 +71,8 @@ Common pattern
 
 2) Functional API
    - builds models with non-linear topology, shared layers, layers with multiple inputs or outputs
+
+# Deep Convolutional Models: Case Studies
 
 ## CNN Case Studies
 
@@ -177,6 +179,8 @@ Use open source code
 - Use architectures of networks published in the literature
 - Use open source implementations if possible
 - Use pretrained models and fine-tune on your dataset
+
+# Object Detection
 
 ## Detection Algorithms
 
@@ -328,6 +332,8 @@ U-Net architecture
 2) Transpose convolutions blow up image size to original input size
 3) Skip connections from earlier layers to matched later layers
    - low level detailed spatial information
+
+# Special Applications: Face recognition & Neural Style Transfer
 
 ## Face Recognition
 
