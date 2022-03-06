@@ -420,7 +420,7 @@ J(G) = α*J_content(C, G) + β*J_style(S, G)
 
 Make generated image G match the content of image C
 
-J_content(C, G) = 1/2 * || a[l](C) - a[l](G) ||^2
+J_content(C, G) = 1/2 * || a[l] (C) - a[l] (G) ||^2
 - difference of activation value between C and G in one chosen layer
 
 The shallower layers
@@ -444,13 +444,13 @@ J_style(S, G) = Σ_l λ[l] * J_style[l](S, G)
 	- if λ is large for deeper layer, generated image softly follows style image
 	- if λ is large for shallower layer, generated image strongly follows style image
 
-J_style[l](S, G) = 1/(2*n_h[l]*n_w[l]*n_c[l])^2 * Σ_kΣ_k' (G_kk'[l](S) - G_kk'[l](G))^2
+J_style[l](S, G) = 1/(2*n_h[l]*n_w[l]*n_c[l])^2 * Σ_kΣ_k' (G_kk'[l] (S) - G_kk'[l] (G))^2
 - difference of correlation(=style) between S and G in layer l
 
-G_kk'[l](S) = Σ_iΣ_j a_ijk[l](S)*a_ijk'[l](S)
+G_kk'[l] (S) = Σ_iΣ_j a_ijk[l] (S)*a_ijk'[l] (S)
 - correlation(=style) value of S in layer l
 - 
-G_kk'[l](G) = Σ_iΣ_j a_ijk[l](G)*a_ijk'[l](G)
+G_kk'[l] (G) = Σ_iΣ_j a_ijk[l] (G)*a_ijk'[l] (G)
 - correlation(=style) value of G in layer l
 
 Style matrix = Gram matrix = G
