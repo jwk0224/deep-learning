@@ -113,3 +113,11 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Generate novel artistic images using your algorithm
 - Define the style cost function for Neural Style Transfer
 - Define the content cost function for Neural Style Transfer
+
+## sqm_ex1_Building Your Recurrent Neural Network: Step by Step
+
+- Define notation for building sequence models
+- Describe the architecture of a basic RNN
+- Identify the main components of an LSTM
+- Implement backpropagation through time for a basic RNN and an LSTM
+- Give examples of several types of RNN
