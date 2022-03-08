@@ -24,7 +24,7 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Compute the cross entropy loss
 - Implement forward and backward propagation
 
-## dl_ex4_Building your Deep Neural Network: Step by Step
+## dl_ex4_Building Your Deep Neural Network: Step by Step
 
 - Use non-linear units like ReLU to improve your model
 - Build a deeper neural network (with more than 1 hidden layer)
@@ -121,3 +121,11 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Identify the main components of an LSTM
 - Implement backpropagation through time for a basic RNN and an LSTM
 - Give examples of several types of RNN
+
+## sqm_ex2_Character level language model: Dinosaurus Island
+
+- Store text data for processing using an RNN
+- Build a character-level text generation model using an RNN
+- Sample novel sequences in an RNN
+- Explain the vanishing/exploding gradient problem in RNNs
+- Apply gradient clipping as a solution for exploding gradients
