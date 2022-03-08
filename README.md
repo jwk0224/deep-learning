@@ -122,7 +122,7 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Implement backpropagation through time for a basic RNN and an LSTM
 - Give examples of several types of RNN
 
-## sqm_ex2_Character level language model: Dinosaurus Island
+## sqm_ex2_Character Level Language Model: Dinosaurus Island
 
 - Store text data for processing using an RNN
 - Build a character-level text generation model using an RNN
