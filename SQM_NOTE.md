@@ -98,7 +98,7 @@ Sampling a sequence from a trained RNN
 3) repeat above process until it reaches the last time step
    - when EOS token is sampled
    - when reaches manually picked number of time step
-- ignore UNK token and re-sample when having unknown word is not preferred
+- ignore UNK token and re-sample when having unknown word is not desired
 
 Character level language model (vs Word level)
 - no worry for unknown word tokens
