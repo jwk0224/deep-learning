@@ -110,8 +110,8 @@ Character level language model (vs Word level)
 
 When training a very deep neural network,  
 as a function of the number of layers,
-- derivative can decreases exponentially : vanishing gradient problem
-- derivative can grows exponentially : exploding gradient problem (shows overflow NaN)
+- derivative can decrease exponentially : vanishing gradient problem
+- derivative can grow exponentially : exploding gradient problem (shows overflow NaN)
 
 Exploding gradients can be solved by
 - gradient clipping : re-scale gradient vectors if it is bigger than threshold
