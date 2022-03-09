@@ -2,12 +2,12 @@
 
 ## Examples of Sequence Data
 
-Speech recognition
-Music generation
-Sentiment classification
-DNA sequence analysis
-Machine translation
-Video activity recognition
+Speech recognition  
+Music generation  
+Sentiment classification  
+DNA sequence analysis  
+Machine translation  
+Video activity recognition  
 Named entity recognition
 
 ## Representing Words
