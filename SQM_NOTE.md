@@ -36,16 +36,16 @@ a<0> : vector of zeros
 x<0> : vector of zeros
 
 Activation for each time step:
-- a<t> = g( Wa * [ a<t-1>, x<t> ] + ba )
+- a< t > = g( Wa * [ a< t-1 >, x< t > ] + ba )
 
 Prediction for each time step:  
-- yhat<t> = g( Wy * a<t> + by )
+- yhat< t > = g( Wy * a< t > + by )
 
 Loss for each time step in forward/back propagation:  
-- L<t>(yhat<t>, y<t>) = -y<t> * log yhat<t> - (1 - y<t>) * log(1 - yhat<t>)
+- L< t >(yhat< t >, y< t >) = -y< t > * log yhat< t > - (1 - y< t >) * log(1 - yhat< t >)
 
 Loss for entire time step in forward/back propagation:  
-- L(yhat, y) = ∑_t L<t>(yhat<t>, y<t>)
+- L(yhat, y) = ∑_t L< t >(yhat< t >, y< t >)
 
 ## Different Architectures of RNNs
 
@@ -133,8 +133,8 @@ and at every time step, the update gate is going to consider overwriting cell in
 
 GRU unit is composed of
 - cell state (c) : memory that gets passed onto future time steps
-- update gate (𝚪u) : decides whether to update c<t> or not
-- relevance gate (𝚪r) : tells the relevance of c<t-1> in computing c<t>
+- update gate (𝚪u) : decides whether to update c< t > or not
+- relevance gate (𝚪r) : tells the relevance of c< t-1 > in computing c< t >
 
 ## Long Short Term Memory (LSTM)
 
@@ -147,36 +147,36 @@ and at every time step, the three gates regulate the flow of information into an
 LSTM unit is composed of
 
 - cell state (c) : memory that gets passed onto future time steps
-	- c<t> = 𝚪f<t> * c<t-1> + 𝚪u<t> * cc<t>
+	- c< t > = 𝚪f< t > * c< t-1 > + 𝚪u< t > * cc< t >
 	- a value is decided by forget gate and update gate
 
 
-- candidate value (cc) : information from current time step that may be stored in c<t>
-	- cc<t> = tanh(Wc [a<t-1>, x<t>] + bc)
+- candidate value (cc) : information from current time step that may be stored in c< t >
+	- cc< t > = tanh(Wc [a< t-1 >, x< t >] + bc)
 	- a tensor containing values that range from -1 to 1
 
 
 - hidden state (a) : value used to predict y of current time step and passed onto next time steps
-	- a<t> = 𝚪o<t> * tanh(c<t>)
+	- a< t > = 𝚪o< t > * tanh(c< t >)
 	- a value is decided by output gate
 
 
-- forget gate (𝚪f) : decides whether to remember value in c<t-1>
-    - 𝚪f<t> = sigmoid(Wf [a<t-1>, x<t>] + bf)
+- forget gate (𝚪f) : decides whether to remember value in c< t-1 >
+    - 𝚪f< t > = sigmoid(Wf [a< t-1 >, x< t >] + bf)
     - a tensor containing values between 0 and 1
-      - close to 0 : forget stored value in c<t-1>
-      - close to 1 : remember stored value in c<t-1>
+      - close to 0 : forget stored value in c< t-1 >
+      - close to 1 : remember stored value in c< t-1 >
 
 
-- update gate (𝚪i) : decides what parts of value in cc<t> are passed onto c<t>
-    - 𝚪i<t> = sigmoid(Wi [a<t-1>, x<t>] + bi)
+- update gate (𝚪i) : decides what parts of value in cc< t > are passed onto c< t >
+    - 𝚪i< t > = sigmoid(Wi [a< t-1 >, x< t >] + bi)
     - a tensor containing values between 0 and 1
-      - close to 0 : prevent value in cc<t> from being passed onto c<t>
-      - close to 1 : allows value in cc<t> to be passed onto c<t>
+      - close to 0 : prevent value in cc< t > from being passed onto c< t >
+      - close to 1 : allows value in cc< t > to be passed onto c< t >
 
 
 - output gate (𝚪o) : decides output activation of current time step
-	- 𝚪o<t> = sigmoid(Wo [a<t-1>, x<t>] + bo)
+	- 𝚪o< t > = sigmoid(Wo [a< t-1 >, x< t >] + bo)
 	- a tensor containing values between 0 and 1
 
 GRU is relatively recent invention and a simplification of more complicated LSTM model
