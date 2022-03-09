@@ -133,6 +133,7 @@ and at every time step, the update gate is going to consider overwriting cell in
 
 GRU unit is composed of
 - cell state (c) : memory that gets passed onto future time steps
+- hidden state (a) : value used to predict y of current time step and passed onto next time steps
 - update gate (𝚪u) : decides whether to update c< t > or not
 - relevance gate (𝚪r) : tells the relevance of c< t-1 > in computing c< t >
 
