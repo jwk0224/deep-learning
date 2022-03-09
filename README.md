@@ -129,3 +129,9 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Sample novel sequences in an RNN
 - Explain the vanishing/exploding gradient problem in RNNs
 - Apply gradient clipping as a solution for exploding gradients
+
+## sqm_ex3_Improvise a Jazz Solo with an LSTM Network
+
+- Apply an LSTM to a music generation task
+- Generate your own jazz music with deep learning
+- Use the flexible Functional API to create complex models
