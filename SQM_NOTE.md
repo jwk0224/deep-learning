@@ -215,10 +215,11 @@ Words are represented by a high dimensional feature vectors
 - it's better than one-hot vector for representing different words
 - it has been one of the most important ideas in NLP
 
-t-SNE is common algorithm for visualizing word embeddings
-- it maps embeddings to a lower dimensional space (ex. plotting 2D data)
-
+Most common sizes for word vectors range between 50 and 1000  
 We cannot guarantee that the individual components of the embeddings are interpretable
+
+t-SNE is common algorithm for visualizing word embeddings
+- it maps embeddings non-linearly to a lower dimensional space (ex. plotting 2D data)
 
 Terminology
 - embedding = encoding
