@@ -374,6 +374,8 @@ GloVe algorithm is even simpler way than other algorithms to learn word embeddin
 minimize  ∑_i ∑_j f(X_ij) ( θ_i^T * e_j + b_i + b'_j - logX_ij   )^2
 - Just minimizing a square cost function learns meaningful word embeddings
 
+θ_i, e_j : should be initialized randomly at the beginning of training
+
 X_ij : number of times j (=target) appears in context of i (=context)
 - how related are words i and j as measured by how often they occur with each other
 
