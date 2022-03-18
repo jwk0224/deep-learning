@@ -236,11 +236,11 @@ can be plugged into many NLP applications
 
 
 2. Transfer embedding to new task with smaller training set (say, 100k words)
-   - use relatively lower dimensional feature vectors instead of one-hot vectors
+   - use relatively lower dimensional feature vectors
 
 
 3. Optional: Continue to finetune the word embeddings with new data
-   - only if this task 2 has a pretty big data set
+   - only if task 2 has a pretty big data set
 
 Transfer learning is most useful (when transfer from task A to task B)  
 when there is a large data set for A and a relatively smaller data set for B
