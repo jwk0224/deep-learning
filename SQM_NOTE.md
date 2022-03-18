@@ -231,7 +231,7 @@ Terminology
 Featurized representations of different words by word embeddings  
 can be plugged into many NLP applications
 
-1. Learn word embeddings from large text corpus (1-100B words)
+1. Learn word embeddings from large text corpus (1~100B words)
    - (or download pre-trained embedding online)
 
 
@@ -338,7 +338,7 @@ CBOW(Continuous Bag of Words) model
 
 ## Negative Sampling for Word Embeddings Learning
 
-Negative sampling algorithm is much more efficient way than Skip-gram model to learn word embeddings
+Negative sampling algorithm is much more efficient way than skip-gram model to learn word embeddings
 
 Given a pair of words, the model predicts whether a pair is positive or negative example
 - Context : a randomly picked word
