@@ -382,7 +382,7 @@ X_ij : number of times j (=target) appears in context of i (=context)
 f(X_ij) : heuristic weighting factor 
 - sum only over the pairs of words that have co-occurred at least once (0 if X_ij = 0)
 - gives a meaningful amount of computation even to the less frequent words
-- gives more weight but not an unduly large amount of weight to words like, this, is, of, a, ...
+- gives more weight but not an unduly large amount of weight to words like this, is, of, a, ...
 
 ## Sentiment Classification
 
