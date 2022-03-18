@@ -426,7 +426,7 @@ Addressing bias in word embeddings
 2) Neutralize : for every word that is not definitional, project to get rid of bias
 	- a linear classifier can tell what words to pass through the neutralization step
 	- most words in the English language are not definitional (ex. man/woman in gender)
-3) Equalize pairs : adjust some pairs of words to have same distance from equalized words
+3) Equalize pairs : adjust some pairs of words to have same distance from neutralized words
 	- the number of pairs to equalize can be relatively small (feasible to hand-pick)
 
 # 3. Sequence Models & Attention Mechanism
