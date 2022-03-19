@@ -136,9 +136,17 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Generate your own jazz music with deep learning
 - Use the flexible Functional API to create complex models
 
-## sqm_ex4_Operations on Word Vectors
+## sqm_ex4_Operations on Word Vectors and Debiasing
 
 - Explain how word embeddings capture relationships between words
 - Load pre-trained word vectors
 - Measure similarity between word vectors using cosine similarity
 - Use word embeddings to solve word analogy problems such as Man is to Woman as King is to __.
+
+## sqm_ex5_Emojify
+
+- Create an embedding layer in Keras with pre-trained word vectors
+- Explain the advantages and disadvantages of the GloVe algorithm
+- Describe how negative sampling learns word vectors more efficiently than other methods
+- Build a sentiment classifier using word embeddings
+- Build and train a more sophisticated classifier using an LSTM
