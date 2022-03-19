@@ -138,7 +138,7 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 
 ## sqm_ex4_Operations on Word Vectors
 
-Explain how word embeddings capture relationships between words
-Load pre-trained word vectors
-Measure similarity between word vectors using cosine similarity
-Use word embeddings to solve word analogy problems such as Man is to Woman as King is to __.
+- Explain how word embeddings capture relationships between words
+- Load pre-trained word vectors
+- Measure similarity between word vectors using cosine similarity
+- Use word embeddings to solve word analogy problems such as Man is to Woman as King is to __.
