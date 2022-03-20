@@ -553,7 +553,7 @@ BP : Brevity Penalty
 
 ## Attention Model
 
-Attention algorithm learns which part of text to focus on, so performs well for long input
+Attention algorithm learns where to pay attention, so performs well for long input
 - encoder-decoder architecture performs worse for text longer than 30 or 40 words
 - attention algorithm solves this and is one of the most influential ideas in deep learning
 
@@ -580,8 +580,8 @@ Attention model takes quadratic time to run
 - input and output are usually not too long in machine translation application
 
 Application example
-- machine translation : pay attention to part of text to generate text
-- image captioning : pay attention to part of image to write caption
+- machine translation : pay attention to certain part of text to generate text
+- image captioning : pay attention to certain part of image to write caption
 - date normalization : ex. July 20th 1969 -> 1969-07-20
 
 ## Speech Recognition
