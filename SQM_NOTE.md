@@ -431,4 +431,195 @@ Addressing bias in word embeddings
 
 # 3. Sequence Models & Attention Mechanism
 
+## Sequence to Sequence Models
+
+Sequence to sequence modeling : to generate most likely sentence
+- machine translation (sentence to sentence)
+- image captioning (image to sentence)
+- speech recognition (audio to sentence)
+
+Language modeling : to generate random sentence
+- synthesizing novel text
+
+Sequence to sequence modeling  
+= encoder network + decoder network(= language model)  
+= conditional language modeling
+
+To generate most likely sentence in sequence to sequence modeling,  
+we need to use approximate search algorithm rather than greedy search algorithm
+- it's not always optimal to just pick one word at a time
+- total number of combinations of words in the English sentence is exponentially large
+
+## Beam Search
+
+Beam search is the most widely used algorithm to generate most likely sentence
+
+Beam search runs much faster but is not guaranteed to find exact maximum possibility  
+compared to exact search algorithms like BFS (Breadth First Search), DFS (Depth First Search)
+
+Beam search considers multiple alternatives at the time
+- arg max Π_t=1~Ty P( y<t> | x, y<1>, y<2>, ... , y<t-1> ) 
+- parameter B (beam width) : number of alternatives to consider
+	- large B : better result, slower
+	- small B : worse result, faster
+	- production system : B = 10~100
+	- research system : B = 1,000~3,000
+	- when B is very large, performance gain tends to diminish
+
+1) take an input from encoder network
+2) pass it to a softmax classifier
+3) compute possibilities of every word being a next word 
+4) take top B words and store them on memory
+5) pass previous sequence to a softmax classifier
+6) compute possibilities of every word being a next word 
+7) take top B sequence of words and store them on memory
+8) repeat 5~7 until getting an EOS output
+
+Length normalization
+
+- arg max ∑_t=1~Ty log P( y<t> | x, y<1>, y<2>, ... , y<t-1> ) 
+
+  - multiplying a lot of numbers less than one results in a very small number
+  - it may cause numerical under-floor
+      - too small for floating point of representation in computer to store accurately
+  - by taking logs, maximize sum of log of probabilities instead of maximizing product of probabilities
+  
+
+- 1/Ty^α * ∑_t=1~Ty log P( y<t> | x, y<1>, y<2>, ... , y<t-1> ) 
+
+  - adding log of probability which is always less than or equal to one results in more negative number
+  - objective function unnaturally tends to prefer very short outputs
+      - because the probability of a short sentence is higher
+  - by normalizing by the number of words, takes average of log of probability of each word
+      - parameter α : 
+          - 0 : no normalization
+          - 1 : full normalization
+          - 0.7 : heuristic softer approach in practice
+
+## Error Analysis in Beam Search
+
+Carry out error analysis to figure out  
+what fraction of errors is due to beam search versus the RNN model
+
+Let RNN compute P(y* | x) and P(yhat | x)
+- y* : good out written by a human
+- yhat : beam search output
+- when using length normalization : evaluate optimization objective instead of probability above
+
+Case 1 : P(y* | x) > P(yhat | x)
+  - beam search chose yhat
+  - but y* attains higher P(y | x)
+  - conclusion : beam search is at fault
+  - possible solution : increase the beam width
+  
+Case 2 : P(y* | x) <= P(yhat | x)
+  - y∗ is a better output than yhat
+  - but RNN predicted P(y* | x) < P(yhat | x)
+  - conclusion : RNN model is at fault
+  - possible solution :
+      - add regularization
+      - get more training data
+      - try a different network architecture
+      - others
+
+## Bleu Score
+
+BLEU score is useful single real number evaluation metric for text generation task
+- BLEU : BiLingual Evaluation Understudy
+- conventional way to evaluate a machine translation system
+- not used for speech recognition because there's usually one ground truth
+
+Combined BLEU score = BP * exp (1/n * ∑_n p_n)
+
+p_n : BLEU score on n-gram
+- measures the degree to which MT output is similar or overlaps with reference outputs
+- p_n = 1 if MT output is exactly equal to one of reference output
+
+
+- p_n =  ∑_(ngram ∈ yhat) count_clip(ngram) / ∑_(ngram ∈ yhat) count(ngram)
+  1) identify ngrams in MT(Machine Translation) output (= yhat)
+  2) compute count_clip(ngram)
+      1) count appearance of each ngram in each reference output
+      2) sum each ngram count that is maximum among reference outputs
+  3) compute count(ngram)
+      1) count appearance of each ngram in MT output
+      2) sum each ngram count
+  4) divide count_clip(ngram) by count(ngram)
+
+BP : Brevity Penalty
+- adjustment factor that penalizes translation systems if output translation is too short
+- 1 if MT_output_length > reference_output_length
+- exp(1 − reference_output_length/MT_output_length) otherwise
+
+## Attention Model
+
+Attention algorithm learns which part of text to focus on, so performs well for long input
+- encoder-decoder architecture performs worse for text longer than 30 or 40 words
+- attention algorithm solves this and is one of the most influential ideas in deep learning
+
+Encoder unit
+- hidden state : a<t'>
+- input : x<t>
+- output : connected to s<t>
+
+ Decoder unit
+- hidden state : s<t>
+- input : previous hidden state s<t-1>, context c<t> (= ∑ a<t, t'> * a<t'>)
+- output : y<t>
+
+Attention model computes a set of attention weights
+- α<t, t'> = exp(e^<t, t'>) / ∑_t' exp(e^<t, t'>)
+  - amount of attention y<t> should pay to a<t'>
+  - sum of weights over t' is 1 by using softmax
+
+One hidden layer neural network is trained to compute attention weights
+- s<t-1>, a<t'> -> hidden layer -> e<t, t'>
+
+Attention model takes quadratic time to run
+- a total number of attention parameters is input unit count x output unit count
+- input and output are usually not too long in machine translation application
+
+Application example
+- machine translation : pay attention to part of text to generate text
+- image captioning : pay attention to part of image to write caption
+- date normalization : ex. July 20th 1969 -> 1969-07-20
+
+## Speech Recognition
+
+Sequence-to-sequence models are applied to audio data, such as the speech
+
+Spectrogram : a common pre-processing step generated from raw audio clip data
+- horizontal axis : time
+- vertical axis : frequencies
+- intensity of different colors : amount of energy
+
+End-to-end deep learning : builds systems that input an audio clip and directly output a transcript
+- using hand-engineered representations like phonemes is no longer needed
+- one of the things that made this possible was much larger data sets
+
+1) Attention model
+
+
+2) CTC cost for speech recognition
+   - CTC : Connectionist Temporal Classification
+   - usually input time steps is much bigger than output time steps
+   - CTC cost function collapses repeated characters not separated by blank
+   - a bunch of blank characters ends up with a much shorter output text transcript
+
+## Trigger Word Detection
+
+We can wake up devices with voice using trigger word detection systems
+
+There is no wide consensus yet on what's the best algorithm for trigger word detection
+
+Example of a trigger word detection algorithm
+1) take an audio clip
+2) compute spectrogram features
+3) generates audio features x and pass through an RNN
+4) define the target labels y in training set
+   - set target labels to be 0 for every unit before saying the trigger word
+   - when just finished saying the trigger word, set target label to be 1
+   - set target labels to be 1 for several times or a fixed period of time before reverting back to 0
+       - to make the model easier to train (training set is imbalanced with a lot more 0s than 1s)
+
 # 4. Transformer Network
