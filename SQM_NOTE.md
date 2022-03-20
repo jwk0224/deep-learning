@@ -608,7 +608,8 @@ End-to-end deep learning : builds systems that input an audio clip and directly 
 
 ## Trigger Word Detection
 
-We can wake up devices with voice using trigger word detection systems
+Trigger word detection is the technology  
+that allows devices like Amazon Alexa to wake up upon hearing a certain word
 
 There is no wide consensus yet on what's the best algorithm for trigger word detection
 
