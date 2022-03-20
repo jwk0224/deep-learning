@@ -554,7 +554,7 @@ BP : Brevity Penalty
 ## Attention Model
 
 Attention algorithm learns where to pay attention, so performs well for long input
-- encoder-decoder architecture performs worse for text longer than 30 or 40 words
+- encoder-decoder model performs worse for text longer than 30 or 40 words
 - attention algorithm solves this and is one of the most influential ideas in deep learning
 
 Encoder unit
