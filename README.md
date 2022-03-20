@@ -150,3 +150,8 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Describe how negative sampling learns word vectors more efficiently than other methods
 - Build a sentiment classifier using word embeddings
 - Build and train a more sophisticated classifier using an LSTM
+
+## sqm_ex6_Neural Machine Translation with Attention
+
+- Build a Neural Machine Translation (NMT) model to translate human-readable dates into machine-readable dates
+- Use an attention model
