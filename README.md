@@ -155,3 +155,9 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 
 - Build a Neural Machine Translation (NMT) model to translate human-readable dates into machine-readable dates
 - Use an attention model
+
+## sqm_ex7_Trigger Word Detection
+
+- Structure a speech recognition project
+- Synthesize and process audio recordings to create train/dev datasets
+- Train a trigger word detection model and make predictions
