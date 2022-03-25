@@ -487,7 +487,7 @@ Length normalization
 
 - 1/Ty^α * ∑_t=1~Ty log P( y< t > | x, y<1>, y<2>, ... , y< t-1 > ) 
 
-  - adding log of probability which is always less than or equal to one results in more negative number
+  - adding log of probability which is always less than or equal to 1 results in more negative number
   - objective function unnaturally tends to prefer very short outputs
       - because the probability of a short sentence is higher
   - by normalizing by the number of words, takes average of log of probability of each word
