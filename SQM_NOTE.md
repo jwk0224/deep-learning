@@ -502,7 +502,7 @@ Carry out error analysis to figure out
 what fraction of errors is due to beam search versus the RNN model
 
 Let RNN compute P(y* | x) and P(yhat | x)
-- y* : good out written by a human
+- y* : good output written by a human
 - yhat : beam search output
 - when using length normalization : evaluate optimization objective instead of probability above
 
@@ -531,11 +531,14 @@ BLEU score is useful single real number evaluation metric for text generation ta
 
 Combined BLEU score = BP * exp (1/n * ∑_n p_n)
 
+BP : Brevity Penalty
+- adjustment factor that penalizes translation systems if output translation is too short
+- 1 if MT_output_length > reference_output_length
+- exp(1 − reference_output_length/MT_output_length) otherwise
+
 p_n : BLEU score on n-gram
 - measures the degree to which MT output is similar or overlaps with reference outputs
 - p_n = 1 if MT output is exactly equal to one of reference output
-
-
 - p_n =  ∑_(ngram ∈ yhat) count_clip(ngram) / ∑_(ngram ∈ yhat) count(ngram)
   1) identify ngrams in MT(Machine Translation) output (= yhat)
   2) compute count_clip(ngram)
@@ -545,11 +548,6 @@ p_n : BLEU score on n-gram
       1) count appearance of each ngram in MT output
       2) sum each ngram count
   4) divide count_clip(ngram) by count(ngram)
-
-BP : Brevity Penalty
-- adjustment factor that penalizes translation systems if output translation is too short
-- 1 if MT_output_length > reference_output_length
-- exp(1 − reference_output_length/MT_output_length) otherwise
 
 ## Attention Model
 
