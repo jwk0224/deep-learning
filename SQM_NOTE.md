@@ -562,7 +562,7 @@ Encoder unit
 
  Decoder unit
 - hidden state : s< t >
-- input : previous hidden state s< t-1 >, context c< t > (= ∑ a<t, t'> * a<t'>)
+- input : previous hidden state s< t-1 >, context c< t > (= ∑ α<t, t'> * a<t'>)
 - output : y< t >
 
 Attention model computes a set of attention weights
