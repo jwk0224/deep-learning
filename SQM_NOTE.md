@@ -458,7 +458,7 @@ Beam search runs much faster but is not guaranteed to find exact maximum possibi
 compared to exact search algorithms like BFS (Breadth First Search), DFS (Depth First Search)
 
 Beam search considers multiple alternatives at the time
-- arg max Π_t=1~Ty P( y<t> | x, y<1>, y<2>, ... , y<t-1> ) 
+- arg max Π_t=1~Ty P( y< t > | x, y<1>, y<2>, ... , y< t-1 > ) 
 - parameter B (beam width) : number of alternatives to consider
 	- large B : better result, slower
 	- small B : worse result, faster
@@ -477,7 +477,7 @@ Beam search considers multiple alternatives at the time
 
 Length normalization
 
-- arg max ∑_t=1~Ty log P( y<t> | x, y<1>, y<2>, ... , y<t-1> ) 
+- arg max ∑_t=1~Ty log P( y< t > | x, y<1>, y<2>, ... , y< t-1 > ) 
 
   - multiplying a lot of numbers less than one results in a very small number
   - it may cause numerical under-floor
@@ -485,7 +485,7 @@ Length normalization
   - by taking logs, maximize sum of log of probabilities instead of maximizing product of probabilities
   
 
-- 1/Ty^α * ∑_t=1~Ty log P( y<t> | x, y<1>, y<2>, ... , y<t-1> ) 
+- 1/Ty^α * ∑_t=1~Ty log P( y< t > | x, y<1>, y<2>, ... , y< t-1 > ) 
 
   - adding log of probability which is always less than or equal to one results in more negative number
   - objective function unnaturally tends to prefer very short outputs
@@ -559,21 +559,21 @@ Attention algorithm learns where to pay attention, so performs well for long inp
 
 Encoder unit
 - hidden state : a<t'>
-- input : x<t>
-- output : connected to s<t>
+- input : x< t >
+- output : connected to s< t >
 
  Decoder unit
-- hidden state : s<t>
-- input : previous hidden state s<t-1>, context c<t> (= ∑ a<t, t'> * a<t'>)
-- output : y<t>
+- hidden state : s< t >
+- input : previous hidden state s< t-1 >, context c< t > (= ∑ a<t, t'> * a<t'>)
+- output : y< t >
 
 Attention model computes a set of attention weights
 - α<t, t'> = exp(e^<t, t'>) / ∑_t' exp(e^<t, t'>)
-  - amount of attention y<t> should pay to a<t'>
+  - amount of attention y< t > should pay to a<t'>
   - sum of weights over t' is 1 by using softmax
 
 One hidden layer neural network is trained to compute attention weights
-- s<t-1>, a<t'> -> hidden layer -> e<t, t'>
+- s< t-1 >, a<t'> -> hidden layer -> e<t, t'>
 
 Attention model takes quadratic time to run
 - a total number of attention parameters is input unit count x output unit count
