@@ -562,7 +562,7 @@ Encoder unit
 
  Decoder unit
 - hidden state : s< t >
-- input : previous hidden state s< t-1 >, context c< t > (= ∑ α<t, t'> * a<t'>)
+- input : previous hidden state s< t-1 >, context c< t > (= ∑ α<t, t'> x a<t'>)
 - output : y< t >
 
 Attention model computes a set of attention weights
@@ -622,3 +622,110 @@ Example of a trigger word detection algorithm
        - to make the model easier to train (training set is imbalanced with a lot more 0s than 1s)
 
 # 4. Transformer Network
+
+## Transformer Network
+
+- Transformer is a relatively complex neural network architecture
+- Transformer is an architecture that has completely taken the NLP world by storm
+- many of the most effective algorithms for NLP today are based on Transformers
+
+RNN -> GRU -> LSTM
+- to capture long range dependencies and sequences, models have become more complex
+- as complexity of sequential model increases, each unit could become a bottle neck
+- all previous units need to be computed one by one to compute the output of final unit
+
+Transformer architecture
+- computes an attention of each word in the sentence in parallel for multiple times
+	- not compute an attention of each word in the sentence from left to right
+- attention based representations + CNN style of processing
+	- Self-attention : an attention based way of representing words in the sentence in parallel
+	- Multi-head Attention : a for loop over the self-attention process
+
+## Self-Attention
+
+Transformers self-attention mechanism finds the most appropriate representation for the word
+- it looks at surrounding words to figure out the context of the word
+- it is much more nuanced, much richer representation for the word than fixed word embedding
+
+Attention-based vector representation of a word 
+- 𝐴(𝑞, 𝐾, 𝑉) = ∑_i ( exp(e^< q * k^< i > >) / ∑_j exp(e^< q * k^<j> >) ) x v< i >
+- sum( (query of the word * Key of each word) x Value of each word )
+
+Query(Q) : asks a question about that word (ex. for Africa, What's happening in Africa?)
+- q< i > = W_Q x x< i >
+
+Key(K) : figures out which words gives the most relevant answer to the query by the similarity
+- k< i > = W_K x x< i >
+
+Value(V) : decides how surrounding words should be represented within A
+- v< i > = W_V x x< i >
+
+W_Q, W_K, W_V are learning parameters
+
+## Multi-Head Attention
+
+Self-attention(= head)
+- computes a vector representation of a word by asking a question for each word
+
+Multi-head attention mechanism
+- does self-attention computation multiple times in parallel (asks multiple questions)
+	- each head is independently computed
+- learns a much richer, much better representation for each word
+
+MultiHead(Q, K, V) = concat(head1, head2, ... headh) * Wo
+- concatenation of attention values is used to compute the output of multi-headed attention
+- headi = Attention(Wi_Q * Q, Wi_K * K, Wi_V * V)
+- h = number of heads
+
+## Transformer Architecture
+
+Main ideas
+
+1) pass embeddings of a sentence to encoder block
+	- use SOS(Start Of Sentence), EOS(End Of Sentence) tokens
+
+
+2) repeat encoder block N times (typical N=6)
+	1) Multi-head attention layer
+		- takes embeddings of input sentence and generate Q, K, V
+		- compute a matrix that represents the sentence
+	2) Feed forward neural network layer
+		- helps determine what interesting features there are in the sentence
+
+
+3) repeat decoder block N times
+	1) Multi-head attention layer
+		- takes embeddings of current generated output sentence and generate Q, K, V
+		- compute a matrix that represents the sentence
+	2) Multi-head attention layer
+		- takes output of encoder block and generate K, V
+			- context based on the input sentence
+		- takes output of previous layer and generate Q
+			- question based on the current generated sentence
+		- compute a matrix that represents the sentence
+	3) Feed forward neural network layer
+		- predicts the next word for the output sentence
+
+
+4) pass output of decoder block to linear and softmax layer to predict the next word
+
+Positional encoding of the input
+- the position of a word in the sentence can be extremely important to translation
+- a unique position encoding vector made by a combination of sine and cosine is added to input embedding vector
+	- the output of the encoding block contains
+		- contextual semantic embedding
+		- positional encoding information
+- position encoding is also passed through the network with residual connections
+	- to pass along positional information through the entire architecture
+
+Add & Norm layer
+- plays a role very similar to the batch norm and helps speed up learning
+- used after every layer in the architecture
+
+Masked multi-head attention
+- during training time, entire correct output sentence is given
+- hide some part of correct output sentence and let the network predict them
+	- no need to generate the words one at a time during training
+
+Since the paper Attention Is All You Need came out,  
+there have been many other iterations of this model like BERT, DistilBERT
