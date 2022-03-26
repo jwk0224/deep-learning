@@ -644,20 +644,21 @@ Transformer architecture
 ## Self-Attention
 
 Transformers self-attention mechanism finds the most appropriate representation for the word
-- it looks at surrounding words to figure out the context of the word
+- given a word, its neighbouring words are used to compute its context
+  - by summing up the word values to map the Attention related to that given word
 - it is much more nuanced, much richer representation for the word than fixed word embedding
 
-Attention-based vector representation of a word 
-- 𝐴(𝑞, 𝐾, 𝑉) = ∑_i ( exp(e^< q * k^< i > >) / ∑_j exp(e^< q * k^<j> >) ) x v< i >
-- sum( (query of the word * Key of each word) x Value of each word )
+Attention-based vector representation of a word
+- A(q, K, V) = ∑_i ( exp(e^< q * k^< i > >) / ∑_j exp(e^< q * k^<j> >) ) x v< i >
+- Attention(Q, K, V) = softmax(Q*K^T/sqrt(d_k)) x V
 
-Query(Q) : asks a question about that word (ex. for Africa, What's happening in Africa?)
+Query(Q) : interesting questions about the words in a sentence
 - q< i > = W_Q x x< i >
 
-Key(K) : figures out which words gives the most relevant answer to the query by the similarity
+Key(K) : qualities of words given a Q
 - k< i > = W_K x x< i >
 
-Value(V) : decides how surrounding words should be represented within A
+Value(V) : specific representations of words given a Q
 - v< i > = W_V x x< i >
 
 W_Q, W_K, W_V are learning parameters
