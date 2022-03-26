@@ -711,13 +711,14 @@ Main ideas
 4) pass output of decoder block to linear and softmax layer to predict the next word
 
 Positional encoding of the input
+- unlike sequential models, transformer feeds data all at once so there is no order data
 - the position of a word in the sentence can be extremely important to translation
 - a unique position encoding vector made by a combination of sine and cosine is added to input embedding vector
-	- the output of the encoding block contains
-		- contextual semantic embedding
-		- positional encoding information
+    - the output of the encoding block contains
+        - contextual semantic embedding
+        - positional encoding information
 - position encoding is also passed through the network with residual connections
-	- to pass along positional information through the entire architecture
+    - to pass along positional information through the entire architecture
 
 Add & Norm layer
 - plays a role very similar to the batch norm and helps speed up learning
