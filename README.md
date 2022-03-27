@@ -168,3 +168,19 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Calculate scaled dot-product self-attention with word embeddings
 - Implement masked multi-head attention
 - Build and train a Transformer model
+
+## sqm_lab1_Transformer Pre-processing
+
+- Create visualizations to gain intuition on positional encodings
+- Visualize how positional encodings affect word embeddings
+
+## sqm_lab2_Transformer Network Application: Named-Entity Recognition
+
+- Use tokenizers and pre-trained models from the HuggingFace Library
+- Fine-tune a pre-trained transformer model for Named-Entity Recognition
+
+## sqm_lab3_Transformer Network Application: Question Answering
+
+- Perform extractive Question Answering
+- Fine-tune a pre-trained transformer model to a custom dataset
+- Implement a QA model in TensorFlow and PyTorch
