@@ -161,3 +161,10 @@ Exercise projects on basic deep learning algorithms from Deep Learning Specializ
 - Structure a speech recognition project
 - Synthesize and process audio recordings to create train/dev datasets
 - Train a trigger word detection model and make predictions
+
+## sqm_ex8_Transformer Network
+
+- Create positional encodings to capture sequential relationships in data
+- Calculate scaled dot-product self-attention with word embeddings
+- Implement masked multi-head attention
+- Build and train a Transformer model

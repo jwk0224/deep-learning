@@ -649,8 +649,8 @@ Transformers self-attention mechanism finds the most appropriate representation 
 - it is much more nuanced, much richer representation for the word than fixed word embedding
 
 Attention-based vector representation of a word
-- A(q, K, V) = ∑_i ( exp(e^< q * k^< i > >) / ∑_j exp(e^< q * k^<j> >) ) x v< i >
-- Attention(Q, K, V) = softmax(Q*K^T/sqrt(d_k)) x V
+- A(q, K, V) = ∑_i ( exp(e^< q * k^< i > >) / ∑_j exp(e^< q * k^<j> >) ) * v< i >
+- Attention(Q, K, V) = softmax( Q * K^T / sqrt(d_k) ) * V
 
 Query(Q) : interesting questions about the words in a sentence
 - q< i > = W_Q x x< i >
@@ -729,5 +729,5 @@ Masked multi-head attention
 - hide some part of correct output sentence and let the network predict them
 	- no need to generate the words one at a time during training
 
-Since the paper Attention Is All You Need came out,  
-there have been many other iterations of this model like BERT, DistilBERT
+Since the paper 'Attention Is All You Need' came out,  
+there have been many other iterations of this Transformer Network model like BERT, DistilBERT
