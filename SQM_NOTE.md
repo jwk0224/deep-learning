@@ -522,7 +522,7 @@ Case 2 : P(y* | x) <= P(yhat | x)
       - try a different network architecture
       - others
 
-## Bleu Score
+## BLEU Score
 
 BLEU score is useful single real number evaluation metric for text generation task
 - BLEU : BiLingual Evaluation Understudy
@@ -663,7 +663,7 @@ Value(V) : specific representations of words given a Q
 
 W_Q, W_K, W_V are learning parameters
 
-## Multi-Head Attention
+## Multi-head Attention
 
 Self-attention(= head)
 - computes a vector representation of a word by asking a question for each word
